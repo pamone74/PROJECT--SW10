@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>RoyalGardens</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+  <link href="royalGardens.jpeg" rel="icon">
+    <script>
+        async function init() {
+            await customElements.whenDefined('gmp-map');
+
+            const map = document.querySelector('gmp-map');
+
+            map.innerMap.setOptions({
+                mapTypeControl: false
+            });
+
+            // Array of locations and links
+            const locations = [
+                { name: "RD-A", link: "https://goo.gl/maps/qH86WNmAUFdtiSzeA", coordinates: { lat: 24.4849167, lng: 54.3986667 } },
+                { name: "RD-B", link: "https://goo.gl/maps/AHagCb11vw9nLzBv8", coordinates: { lat: 24.4960556, lng: 54.4114167 } },
+                { name: "RD-C", link: "https://goo.gl/maps/uNrD8MEpj2gtz8mf8", coordinates: { lat: 24.4912778, lng: 54.4143056 } },
+                { name: "RD-D", link: "https://goo.gl/maps/uoexk16HEbHyN98M8", coordinates: { lat: 24.4693611, lng: 54.322 } },
+                { name: "RD-E", link: "https://goo.gl/maps/sfV2fCJKavsTsL1Y9", coordinates: { lat: 24.4863333, lng: 54.3964167 } },
+                { name: "RD-F", link: "https://goo.gl/maps/aNiGEpR1CQidKRAx8", coordinates: { lat: 24.4822778, lng: 54.4063889 } },
+                { name: "RD-G", link: "https://goo.gl/maps/vRdXxhDEDXNprcid6", coordinates: { lat: 24.4809722, lng: 54.4032778 } },
+                { name: "RD-H", link: "https://goo.gl/maps/jUGhjULeuY7qR2L87", coordinates: { lat: 24.4733889, lng: 54.4171111 } },
+                { name: "RD-I", link: "https://goo.gl/maps/oqE8cbvqqumoVPBVA", coordinates: { lat: 24.4742222, lng: 54.4114444 } },
+                { name: "RD-J", link: "https://goo.gl/maps/Q5zGui4ZPXdftbC37", coordinates: { lat: 24.5081944, lng: 54.4136944 } },
+                { name: "RD-K", link: "https://goo.gl/maps/h2pD9NmXcxEs7VK36", coordinates: { lat: 24.5115556, lng: 54.4098889 } },
+                { name: "RD-L", link: "https://goo.gl/maps/97TxEJGeHN3kHCnA9", coordinates: { lat: 24.5016944, lng: 54.4167778 } },
+                { name: "RD-M", link: "https://goo.gl/maps/asXieyCeU5HN92Zx6", coordinates: { lat: 24.4983611, lng: 54.41425 } },
+                { name: "RD-N", link: "https://goo.gl/maps/TF5Ne3pbiKsBKUiQ8", coordinates: { lat: 24.4949722, lng: 54.3925833 } },
+                { name: "RD-O", link: "https://goo.gl/maps/DkThvAE3nJ1pMzts6", coordinates: { lat: 24.4944444, lng: 54.4032778 } },
+                { name: "RD-P", link: "https://goo.gl/maps/FHPzs9Zf8ZjJ8Pi47", coordinates: { lat: 24.4986111, lng: 54.3933889 } },
+                { name: "RD-Q", link: "https://goo.gl/maps/JM9AeEpKgMBndWrc7", coordinates: { lat: 24.5078889, lng: 54.4039167 } },
+                { name: "RD-R", link: "https://goo.gl/maps/NCEL74XK4wZsSj5F6", coordinates: { lat: 24.4833611, lng: 54.3475 } },
+                // Add other locations here
+            ];
+
+            // Add markers for each location
+            const markers = locations.map(location => {
+                const marker = new google.maps.Marker({
+                    position: location.coordinates,
+                    title: location.name,
+                    label: {
+                        text: location.name,
+                        fontWeight: 'bold'
+                    },
+                    map: null, // Initially not shown
+                });
+
+                marker.addListener('click', function() {
+                    window.open(location.link, '_blank');
+                });
+
+                return marker;
+            });
+
+            // Create side panel for selection
+            const sidePanel = document.getElementById('side-panel');
+
+            locations.forEach((location, index) => {
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = `location-${index}`;
+                checkbox.checked = false; // Initially unchecked
+                checkbox.addEventListener('change', (event) => {
+                    const isChecked = event.target.checked;
+                    if (isChecked) {
+                        markers[index].setMap(map.innerMap); // Show the marker
+                    } else {
+                        markers[index].setMap(null); // Hide the marker
+                    }
+                });
+
+                const label = document.createElement('label');
+                label.htmlFor = `location-${index}`;
+                label.textContent = location.name;
+
+                const br = document.createElement('br');
+
+                sidePanel.appendChild(checkbox);
+                sidePanel.appendChild(label);
+                sidePanel.appendChild(br);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+
+    <script type="module" src="https://unpkg.com/@googlemaps/extended-component-library@0.6"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin-top: 80px;
+            padding: 0;
+            display: flex;
+            width: 85%;
+        }
+
+        #side-panel {
+            width: 20%;
+            padding: 10px;
+            position: fixed; /* Fixed position */
+            top: 150px;
+            right: 0;
+            background-color: #fff;
+            border-left: 1px solid #ccc;
+            overflow-y: auto; /* Add scroll if content overflows */
+            height: 100%; /* Make the side panel full height */
+        }
+
+        #map-container {
+            flex: 1;
+            height: 100%;
+            position: relative;
+            overflow: hidden; /* Hide the scrollbar */
+        }
+        .navbar-custom {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background-color: #ffffff; /* Change the background color as needed */
+            padding: 10px 20px; /* Adjust padding as needed */
+            position: fixed; /* Fixed position */
+            top: 0; /* Fixed to the top */
+            left: 0; /* Align to the left */
+            right: 0; /* Align to the right */
+            z-index: 1000; /* Ensure the navbar stays on top of other elements */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand p {
+            margin-left: 0px; /* Adjust spacing between logo and text */
+            margin-right: 0px; /* Adjust spacing between text and logo */
+            
+        }
+        .navbar-brand img{
+            width: 100px;
+            height: 100px;
+        }
+
+        .navbar-brand p {
+            margin-left: 10px; /* Adjust spacing between logo and text */
+            font-size: 20px; /* Adjust font size as needed */
+            font-weight: bold; /* Optional: Adjust font weight as needed */
+        }
+
+        /* Space below navbar to prevent content from being hidden */
+        /* body { */
+            /* padding-top: 50px; Adjust padding to match navbar height */
+        /* } */
+    </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-light navbar-expand-xl navbar-custom">
+    <div class="navbar-brand">
+        <img src="royalGardens.jpeg" alt="Royal Gardens Logo">
+        
+    </div>
+    <div class="navbar-brand">
+      <h2>ROYAL GARDENS EMERGENCY CALL CENTER</h2>
+      </div>
+    <div class="navbar-brand">
+        <img src="municipality.jpeg" alt="Municipality Logo">
+    </div>
+  </nav>
+  
+            <!-- Spinner Start -->
+    <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex 
+        align-items-center justify-content-center">
+      <div class="spinner-grow text-primary" role="status"></div>
+        </div>
+        <!-- Spinner End -->
+        
+        
+  
+    <gmpx-api-loader key="AIzaSyCXn3_1o4fZgmtID0onViy02TxBPFBzK7g"
+        solution-channel="GMP_GE_mapsandplacesautocomplete_v1">
+    </gmpx-api-loader>
+    <div id="map-container">
+        <gmp-map center="24.4539,54.3773" zoom="10" map-id="DEMO_MAP_ID" scrollwheel="true"></gmp-map>
+    </div>
+    <div id="side-panel">
+      <h1>SW10</h1>
+    </div>
+</body>
+
+</html>
