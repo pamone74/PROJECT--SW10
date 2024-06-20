@@ -106,36 +106,68 @@ const markers = locations.map(location => {
 
         return marker;
       });
-
       const sidePanel = document.getElementById('side-panel');
 
-      locations.forEach((location, index) => {
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.id = `location-${index}`;
-        checkbox.checked = false;
-        checkbox.addEventListener('change', (event) => {
-          const isChecked = event.target.checked;
-          if (isChecked) {
-            markers[index].setMap(map.innerMap);
-          } else {
-            markers[index].setMap(null);
-          }
-        });
-
-        const label = document.createElement('label');
-        label.htmlFor = `location-${index}`;
-        label.textContent = location.permit_no;
-
-        const br = document.createElement('br');
-
-        sidePanel.appendChild(checkbox);
-        sidePanel.appendChild(label);
-        sidePanel.appendChild(br);
-      });
+const selectAllCheckbox = document.createElement('input');
+selectAllCheckbox.type = 'checkbox';
+selectAllCheckbox.id = 'select-all';
+selectAllCheckbox.addEventListener('change', (event) => {
+  const isChecked = event.target.checked;
+  document.querySelectorAll('.location-checkbox').forEach(checkbox => {
+    checkbox.checked = isChecked;
+    const index = checkbox.dataset.index;
+    if (isChecked) {
+      markers[index].setMap(map.innerMap);
+    } else {
+      markers[index].setMap(null);
     }
+  });
+});
 
-    document.addEventListener('DOMContentLoaded', init);
+const selectAllLabel = document.createElement('label');
+selectAllLabel.htmlFor = 'select-all';
+selectAllLabel.textContent = 'Select All';
+
+sidePanel.appendChild(selectAllCheckbox);
+sidePanel.appendChild(selectAllLabel);
+sidePanel.appendChild(document.createElement('br'));
+
+locations.forEach((location, index) => {
+  const checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  checkbox.id = `location-${index}`;
+  checkbox.classList.add('location-checkbox');
+  checkbox.dataset.index = index;
+  checkbox.checked = false;
+  checkbox.addEventListener('change', (event) => {
+    const isChecked = event.target.checked;
+    if (isChecked) {
+      markers[index].setMap(map.innerMap);
+    } else {
+      markers[index].setMap(null);
+    }
+    updateSelectAllCheckbox();
+  });
+
+  const label = document.createElement('label');
+  label.htmlFor = `location-${index}`;
+  label.textContent = location.permit_no;
+
+  const br = document.createElement('br');
+
+  sidePanel.appendChild(checkbox);
+  sidePanel.appendChild(label);
+  sidePanel.appendChild(br);
+});
+
+function updateSelectAllCheckbox() {
+  const allChecked = document.querySelectorAll('.location-checkbox:checked').length === locations.length;
+  selectAllCheckbox.checked = allChecked;
+}
+}
+
+document.addEventListener('DOMContentLoaded', init);
+
     </script>
 
     <script type="module" src="https://unpkg.com/@googlemaps/extended-component-library@0.6"></script>
