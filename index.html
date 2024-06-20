@@ -18,184 +18,221 @@
                 mapTypeControl: false
             });
 
-            // Array of locations and links
-            const locations = [
-                { name: "RD-A", link: "https://goo.gl/maps/qH86WNmAUFdtiSzeA", coordinates: { lat: 24.4849167, lng: 54.3986667 } },
-                { name: "RD-B", link: "https://goo.gl/maps/AHagCb11vw9nLzBv8", coordinates: { lat: 24.4960556, lng: 54.4114167 } },
-                { name: "RD-C", link: "https://goo.gl/maps/uNrD8MEpj2gtz8mf8", coordinates: { lat: 24.4912778, lng: 54.4143056 } },
-                { name: "RD-D", link: "https://goo.gl/maps/uoexk16HEbHyN98M8", coordinates: { lat: 24.4693611, lng: 54.322 } },
-                { name: "RD-E", link: "https://goo.gl/maps/sfV2fCJKavsTsL1Y9", coordinates: { lat: 24.4863333, lng: 54.3964167 } },
-                { name: "RD-F", link: "https://goo.gl/maps/aNiGEpR1CQidKRAx8", coordinates: { lat: 24.4822778, lng: 54.4063889 } },
-                { name: "RD-G", link: "https://goo.gl/maps/vRdXxhDEDXNprcid6", coordinates: { lat: 24.4809722, lng: 54.4032778 } },
-                { name: "RD-H", link: "https://goo.gl/maps/jUGhjULeuY7qR2L87", coordinates: { lat: 24.4733889, lng: 54.4171111 } },
-                { name: "RD-I", link: "https://goo.gl/maps/oqE8cbvqqumoVPBVA", coordinates: { lat: 24.4742222, lng: 54.4114444 } },
-                { name: "RD-J", link: "https://goo.gl/maps/Q5zGui4ZPXdftbC37", coordinates: { lat: 24.5081944, lng: 54.4136944 } },
-                { name: "RD-K", link: "https://goo.gl/maps/h2pD9NmXcxEs7VK36", coordinates: { lat: 24.5115556, lng: 54.4098889 } },
-                { name: "RD-L", link: "https://goo.gl/maps/97TxEJGeHN3kHCnA9", coordinates: { lat: 24.5016944, lng: 54.4167778 } },
-                { name: "RD-M", link: "https://goo.gl/maps/asXieyCeU5HN92Zx6", coordinates: { lat: 24.4983611, lng: 54.41425 } },
-                { name: "RD-N", link: "https://goo.gl/maps/TF5Ne3pbiKsBKUiQ8", coordinates: { lat: 24.4949722, lng: 54.3925833 } },
-                { name: "RD-O", link: "https://goo.gl/maps/DkThvAE3nJ1pMzts6", coordinates: { lat: 24.4944444, lng: 54.4032778 } },
-                { name: "RD-P", link: "https://goo.gl/maps/FHPzs9Zf8ZjJ8Pi47", coordinates: { lat: 24.4986111, lng: 54.3933889 } },
-                { name: "RD-Q", link: "https://goo.gl/maps/JM9AeEpKgMBndWrc7", coordinates: { lat: 24.5078889, lng: 54.4039167 } },
-                { name: "RD-R", link: "https://goo.gl/maps/NCEL74XK4wZsSj5F6", coordinates: { lat: 24.4833611, lng: 54.3475 } },
-                // Add other locations here
-            ];
+const locations = [
+    { permit_no: "107322-A", link: "https://maps.app.goo.gl/MrK8qLPyi2C1tcob8", coordinates: { lat: 24.463122, lng: 54.348888 } },
+    { permit_no: "107322-A", link: "https://maps.app.goo.gl/NjirECmy5BePg31o6", coordinates: { lat: 24.460761, lng: 54.345499 } },
+    { permit_no: "107322-A", link: "https://maps.app.goo.gl/Twn6MhkTRw7SGMwn9", coordinates: { lat: 24.463554, lng: 54.342904 } },
+    { permit_no: "107322-A", link: "https://maps.app.goo.gl/FTCDRatX2HuK38mz5", coordinates: { lat: 24.456860, lng: 54.338773 } },
+    { permit_no: "107322-A", link: "https://maps.app.goo.gl/62gzzDi2ZQ8PseLF6", coordinates: { lat: 24.457130, lng: 54.337752 } },
+    { permit_no: "107322-A", link: "https://maps.app.goo.gl/7oKSswZqF6tXY7e78", coordinates: { lat: 24.455628, lng: 54.330504 } },
+    { permit_no: "107322-A", link: "https://maps.app.goo.gl/zYXtQs2qSbmUWDAQ9", coordinates: { lat: 24.456735, lng: 54.330554 } },
+    { permit_no: "107322-A", link: "https://maps.app.goo.gl/dZfnyj2cKgZEnYnJ6", coordinates: { lat: 24.459467, lng: 54.330361 } },
+    { permit_no: "107322-A", link: "https://maps.app.goo.gl/MFaGv6mTzqXueoax7", coordinates: { lat: 24.462724, lng: 54.334667 } },
+    { permit_no: "107322-A", link: "https://maps.app.goo.gl/AroV9ygugJUgvjf46", coordinates: { lat: 24.466366, lng: 54.331249 } },
+    { permit_no: "107322-A", link: "https://maps.app.goo.gl/YPzcGZRfwcUsCzSE7", coordinates: { lat: 24.465401, lng: 54.328971 } },
+    { permit_no: "107322-A", link: "https://maps.app.goo.gl/BF9AjfSRdbieGVvs6", coordinates: { lat: 24.463229, lng: 54.324991 } },
+    { permit_no: "107322-A", link: "https://maps.app.goo.gl/scPJ5ymyZJEcCyJy9", coordinates: { lat: 24.458233, lng: 54.343694 } },
+    { permit_no: "107322-A", link: "https://maps.app.goo.gl/Jr949JzDjSf1mrXC8", coordinates: { lat: 24.460345, lng: 54.322524 } },
+    { permit_no: "111530-A", link: "https://maps.app.goo.gl/SAV7CgkNB4wAjjhF8", coordinates: { lat: 24.456430, lng: 54.336918 } },
+    { permit_no: "111554-A", link: "https://maps.app.goo.gl/G5q4U7iNY8yCekw79", coordinates: { lat: 24.455797, lng: 54.346833 } },
+    { permit_no: "119054-A", link: "https://maps.app.goo.gl/F1vuBm6A4pP67cJNA", coordinates: { lat: 24.462751, lng: 54.338100 } },
+    { permit_no: "120712-A", link: "https://maps.app.goo.gl/jYsmUkvq4wY9kAdV8", coordinates: { lat: 24.463188, lng: 54.335528 } },
+    { permit_no: "120712-A", link: "https://maps.app.goo.gl/95VMkpPWMSKhesiE9", coordinates: { lat: 24.461038, lng: 54.332961 } },
+    { permit_no: "101814-B", link: "https://maps.app.goo.gl/QMC5QrRqpLjaH4xC9", coordinates: { lat: 24.467931, lng: 54.337250 } },
+    { permit_no: "107322-B", link: "https://maps.app.goo.gl/nGBxRKyqmoSz9c877", coordinates: { lat: 24.469549, lng: 54.348306 } },
+    { permit_no: "107322-B", link: "https://maps.app.goo.gl/6EE9A9CQH7ksf1it7", coordinates: { lat: 24.478233, lng: 54.352989 } },
+    { permit_no: "107322-B", link: "https://maps.app.goo.gl/VhwRKzpvFv1z5yFt5", coordinates: { lat: 24.474243, lng: 54.349611 } },
+    { permit_no: "107322-B", link: "https://maps.app.goo.gl/U7DBY2eUQAkbqvLdA", coordinates: { lat: 24.478306, lng: 54.352306 } },
+    { permit_no: "107322-B", link: "https://maps.app.goo.gl/VneNsiAdMX1m11P66", coordinates: { lat: 24.474684, lng: 54.348611 } },
+    { permit_no: "107322-B", link: "https://maps.app.goo.gl/5E3LCu4813Sqja7s5", coordinates: { lat: 24.468369, lng: 54.358090 } },
+    { permit_no: "107322-B", link: "https://maps.app.goo.gl/GASR7UQLRnFQRJ9k8", coordinates: { lat: 24.468500, lng: 54.338611 } },
+    { permit_no: "107322-B", link: "https://maps.app.goo.gl/t8k7oeEVhNTKqQBYA", coordinates: { lat: 24.467884, lng: 54.341306 } },
+    { permit_no: "107322-B", link: "https://maps.app.goo.gl/KrdnfYdZp2uGC1N59", coordinates: { lat: 24.468636, lng: 54.337989 } },
+    { permit_no: "110399-B", link: "https://maps.app.goo.gl/6r2mbSGBtPswk58C7", coordinates: { lat: 24.472912, lng: 54.342177 } },
+    { permit_no: "113163-B", link: "https://maps.app.goo.gl/axaDc5qgWwxSxfdR9", coordinates: { lat: 24.467223, lng: 54.349028 } },
+    { permit_no: "116670-B", link: "https://maps.app.goo.gl/7gm377Uqpgi4zszY9", coordinates: { lat: 24.477542, lng: 54.352444 } },
+    { permit_no: "118913-B", link: "https://maps.app.goo.gl/n9V4Mjs7RMV5rPm3A", coordinates: { lat: 24.482374, lng: 54.352205 } },
+    { permit_no: "120754-B", link: "https://maps.app.goo.gl/Mr9wmmEdDdrJofeT7", coordinates: { lat: 24.465588, lng: 54.357083 } },
+    { permit_no: "120754-B", link: "https://maps.app.goo.gl/Mr9wmmEdDdrJofeT7", coordinates: { lat: 24.465578, lng: 54.357083 } },
+    { permit_no: "106199-C", link: "https://maps.app.goo.gl/CLucA5rwa7QdfCVe7", coordinates: { lat: 24.491070, lng: 54.358372 } },
+    { permit_no: "111709-C", link: "https://maps.app.goo.gl/RPFRbSfH5UUkrTEv9", coordinates: { lat: 24.483098, lng: 54.360205 } },
+    { permit_no: "115884-C", link: "https://maps.app.goo.gl/hn4F4LGhU2fMZJ3x9", coordinates: { lat: 24.479889, lng: 54.360389 } },
+    { permit_no: "120101-C", link: "https://maps.app.goo.gl/LK2JVHgJ4fBpvfuA7", coordinates: { lat: 24.488419, lng: 54.359796 } },
+    { permit_no: "121267-C", link: "https://maps.app.goo.gl/k87LMpqBYxrvANHi6", coordinates: { lat: 24.487306, lng: 54.351444 } },
+    { permit_no: "122790-C", link: "https://maps.app.goo.gl/RVPNexJhmZspFoF98", coordinates: { lat: 24.485583, lng: 54.351972 } },
+    { permit_no: "101687-G", link: "https://maps.app.goo.gl/rg9XjLqhpYY99AWE6", coordinates: { lat: 24.477778, lng: 54.382333 } },
+    { permit_no: "102041-G", link: "https://maps.app.goo.gl/8SBofmG6kcKqkhdP8", coordinates: { lat: 24.477778, lng: 54.368944 } },
+    { permit_no: "103778-G", link: "https://maps.app.goo.gl/VDNKSDMdccnQjKmd9", coordinates: { lat: 24.476972, lng: 54.368111 } },
+    { permit_no: "115813-G", link: "https://maps.app.goo.gl/9V7uR4YxcszQ2uo4A", coordinates: { lat: 24.477778, lng: 54.383556 } },
+    { permit_no: "118276-G", link: "https://maps.app.goo.gl/1SU74g6cnKSkdTtD6", coordinates: { lat: 24.478083, lng: 54.374583 } },
+    { permit_no: "122348-G", link: "https://maps.app.goo.gl/k3CY4LGKMkFcqhuY9", coordinates: { lat: 24.479972, lng: 54.372056 } },
+    { permit_no: "122348-G", link: "https://maps.app.goo.gl/mTLkYDx8YjC8q2Ra7", coordinates: { lat: 24.479861, lng: 54.372139 } },
+    { permit_no: "122348-G", link: "https://maps.app.goo.gl/VfRccBKVgz58e8PB9", coordinates: { lat: 24.479722, lng: 54.371944 } },
+    { permit_no: "122348-G", link: "https://maps.app.goo.gl/An3T5P5wMj8ce7dH9", coordinates: { lat: 24.479833, lng: 54.371861 } },
+    { permit_no: "103369-I", link: "https://maps.app.goo.gl/JB5srTeAjmCq7bKUA", coordinates: { lat: 24.453528, lng: 54.387194 } },
+    { permit_no: "103369-I", link: "https://maps.app.goo.gl/5YvJhJzPoqAdaTHd6", coordinates: { lat: 24.453694, lng: 54.387028 } },
+    { permit_no: "103369-I", link: "https://maps.app.goo.gl/3DmPjc88kD3ohb6t9", coordinates: { lat: 24.453750, lng: 54.387111 } },
+    { permit_no: "103369-I", link: "https://maps.app.goo.gl/cqhAVkJFZgpZhSwB9", coordinates: { lat: 24.453583, lng: 54.387278 } },
+    { permit_no: "110674-I", link: "https://maps.app.goo.gl/zrBPxq5oKDhniPEVA", coordinates: { lat: 24.464528, lng: 54.391306 } },
+    { permit_no: "111705-I", link: "https://maps.app.goo.gl/PWAxBXzx6eZ5c1vW9", coordinates: { lat: 24.463056, lng: 54.395611 } },
+    { permit_no: "117555-I", link: "https://maps.app.goo.gl/rDTUA2m2ZvRPi2oX9", coordinates: { lat: 24.460639, lng: 54.379083 } },
+    { permit_no: "118126-I", link: "https://maps.app.goo.gl/EZDqRxVgndLUgGqc8", coordinates: { lat: 24.451000, lng: 54.389639 } },
+    { permit_no: "119999-I", link: "https://maps.app.goo.gl/EJMBJNVvfnMkTeVu6", coordinates: { lat: 24.461889, lng: 54.384167 } },
+    { permit_no: "120119-I", link: "https://maps.app.goo.gl/BasdXNDhoPDHjwy38", coordinates: { lat: 24.463750, lng: 54.392194 } },
+    { permit_no: "120328-I", link: "https://maps.app.goo.gl/4wcNjNwgV1i7YzHh8", coordinates: { lat: 24.458583, lng: 54.382528 } },
+    { permit_no: "121547-I", link: "https://maps.app.goo.gl/Gt1dYC8SwXs4bu758", coordinates: { lat: 24.463417, lng: 54.389889 } },
+    { permit_no: "122222-I", link: "https://maps.app.goo.gl/cwH5XfWdW77wAAg6A", coordinates: { lat: 24.461889, lng: 54.396250 } },
+    { permit_no: "122517-I", link: "https://maps.app.goo.gl/yzKJATrZ2ysTvuDC8", coordinates: { lat: 24.450444, lng: 54.405694 } },
+    { permit_no: "68483-I", link: "https://maps.app.goo.gl/ofDNbioXv231zpaYA", coordinates: { lat: 24.445000, lng: 54.403778 } },
+    { permit_no: "103485-P", link: "https://maps.app.goo.gl/rTJKaRbAAjCYJb5AA", coordinates: { lat: 24.418278, lng: 54.464806 } },
+    { permit_no: "103485-P", link: "https://maps.app.goo.gl/jFtZfSJ8Z3quvSvk9", coordinates: { lat: 24.418583, lng: 54.465028 } },
+    { permit_no: "103485-P", link: "https://maps.app.goo.gl/Z9ebQvmnPThCDELV7", coordinates: { lat: 24.419167, lng: 54.464333 } },
+    { permit_no: "103485-P", link: "https://maps.app.goo.gl/Hdnqebzc8A3gkJEe6", coordinates: { lat: 24.418944, lng: 54.464056 } }
+];
+const markers = locations.map(location => {
+        const marker = new google.maps.Marker({
+          position: location.coordinates,
+          title: location.permit_no,
+          label: {
+            text: location.permit_no,
+            fontWeight: 'bold'
+          },
+          map: null, // Initially not shown
+        });
 
-            // Add markers for each location
-            const markers = locations.map(location => {
-                const marker = new google.maps.Marker({
-                    position: location.coordinates,
-                    title: location.name,
-                    label: {
-                        text: location.name,
-                        fontWeight: 'bold'
-                    },
-                    map: null, // Initially not shown
-                });
+        marker.addListener('click', function () {
+          window.open(location.link, '_blank');
+        });
 
-                marker.addListener('click', function() {
-                    window.open(location.link, '_blank');
-                });
+        return marker;
+      });
 
-                return marker;
-            });
+      const sidePanel = document.getElementById('side-panel');
 
-            // Create side panel for selection
-            const sidePanel = document.getElementById('side-panel');
+      locations.forEach((location, index) => {
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.id = `location-${index}`;
+        checkbox.checked = false;
+        checkbox.addEventListener('change', (event) => {
+          const isChecked = event.target.checked;
+          if (isChecked) {
+            markers[index].setMap(map.innerMap);
+          } else {
+            markers[index].setMap(null);
+          }
+        });
 
-            locations.forEach((location, index) => {
-                const checkbox = document.createElement('input');
-                checkbox.type = 'checkbox';
-                checkbox.id = `location-${index}`;
-                checkbox.checked = false; // Initially unchecked
-                checkbox.addEventListener('change', (event) => {
-                    const isChecked = event.target.checked;
-                    if (isChecked) {
-                        markers[index].setMap(map.innerMap); // Show the marker
-                    } else {
-                        markers[index].setMap(null); // Hide the marker
-                    }
-                });
+        const label = document.createElement('label');
+        label.htmlFor = `location-${index}`;
+        label.textContent = location.permit_no;
 
-                const label = document.createElement('label');
-                label.htmlFor = `location-${index}`;
-                label.textContent = location.name;
+        const br = document.createElement('br');
 
-                const br = document.createElement('br');
+        sidePanel.appendChild(checkbox);
+        sidePanel.appendChild(label);
+        sidePanel.appendChild(br);
+      });
+    }
 
-                sidePanel.appendChild(checkbox);
-                sidePanel.appendChild(label);
-                sidePanel.appendChild(br);
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', init);
     </script>
 
     <script type="module" src="https://unpkg.com/@googlemaps/extended-component-library@0.6"></script>
     <style>
-        html,
-        body {
-            height: 100%;
-            margin-top: 80px;
-            padding: 0;
-            display: flex;
-            width: 85%;
-        }
+    html, body {
+      height: 100%;
+      margin-top: 70px;
+      padding: 0;
+      display: flex;
+      width: 100%;
+    }
 
-        #side-panel {
-            width: 20%;
-            padding: 10px;
-            position: fixed; /* Fixed position */
-            top: 150px;
-            right: 0;
-            background-color: #fff;
-            border-left: 1px solid #ccc;
-            overflow-y: auto; /* Add scroll if content overflows */
-            height: 100%; /* Make the side panel full height */
-        }
+    #side-panel {
+      padding: 10px;
+      position: fixed;
+      top: 100px;
+      right: 0;
+      background-color: #fff;
+      overflow-y: auto;
+      height: 100%;
+      width: 30%;
+      font-size: small;
+    }
 
-        #map-container {
-            flex: 1;
-            height: 100%;
-            position: relative;
-            overflow: hidden; /* Hide the scrollbar */
-        }
-        .navbar-custom {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            background-color: #ffffff; /* Change the background color as needed */
-            padding: 10px 20px; /* Adjust padding as needed */
-            position: fixed; /* Fixed position */
-            top: 0; /* Fixed to the top */
-            left: 0; /* Align to the left */
-            right: 0; /* Align to the right */
-            z-index: 1000; /* Ensure the navbar stays on top of other elements */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
-        }
+    #map-container {
+      flex: 1;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
 
-        .navbar-brand {
-            display: flex;
-            align-items: center;
-        }
+    .navbar-custom {
+      display: flex;
+      align-items:center;
+      justify-content: space-around;
+      background-color: #ffffff;
+      padding: 10px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    }
 
-        .navbar-brand p {
-            margin-left: 0px; /* Adjust spacing between logo and text */
-            margin-right: 0px; /* Adjust spacing between text and logo */
-            
-        }
-        .navbar-brand img{
-            width: 100px;
-            height: 100px;
-        }
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+    }
 
-        .navbar-brand p {
-            margin-left: 10px; /* Adjust spacing between logo and text */
-            font-size: 20px; /* Adjust font size as needed */
-            font-weight: bold; /* Optional: Adjust font weight as needed */
-        }
+    .navbar-brand p {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
 
-        /* Space below navbar to prevent content from being hidden */
-        /* body { */
-            /* padding-top: 50px; Adjust padding to match navbar height */
-        /* } */
+    .navbar-brand img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .navbar-brand p {
+      margin-left: 10px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+
     </style>
 </head>
 
 <body>
-
-  <nav class="navbar navbar-light navbar-expand-xl navbar-custom">
-    <div class="navbar-brand">
+    <nav class="navbar navbar-light navbar-expand-xl navbar-custom">
+      <div class="navbar-brand">
         <img src="royalGardens.jpeg" alt="Royal Gardens Logo">
-        
-    </div>
-    <div class="navbar-brand">
-      <h2>ROYAL GARDENS EMERGENCY CALL CENTER</h2>
       </div>
-    <div class="navbar-brand">
+      <div class="navbar-brand">
+        <h2>SW10 - RD</h2>
+      </div>
+      <div class="navbar-brand">
         <img src="municipality.jpeg" alt="Municipality Logo">
-    </div>
-  </nav>
+      </div>
+    </nav>
   
-            <!-- Spinner Start -->
-    <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex 
-        align-items-center justify-content-center">
+    <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50 d-flex 
+      align-items-center justify-content-center">
       <div class="spinner-grow text-primary" role="status"></div>
-        </div>
-        <!-- Spinner End -->
-        
-        
+    </div>
   
     <gmpx-api-loader key="AIzaSyCXn3_1o4fZgmtID0onViy02TxBPFBzK7g"
-        solution-channel="GMP_GE_mapsandplacesautocomplete_v1">
+      solution-channel="GMP_GE_mapsandplacesautocomplete_v1">
     </gmpx-api-loader>
     <div id="map-container">
-        <gmp-map center="24.4539,54.3773" zoom="10" map-id="DEMO_MAP_ID" scrollwheel="true"></gmp-map>
+      <gmp-map center="24.4539,54.3773" zoom="10" map-id="DEMO_MAP_ID" scrollwheel="true"></gmp-map>
     </div>
     <div id="side-panel">
-      <h1>SW10</h1>
+      <h1>RD</h1>
     </div>
-</body>
+  </body>
 
 </html>
