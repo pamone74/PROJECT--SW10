@@ -8,93 +8,90 @@
   <meta content="" name="keywords">
   <meta content="" name="description">
   <link href="royalGardens.jpeg" rel="icon">
-    <script>
-        async function init() {
-            await customElements.whenDefined('gmp-map');
+  <script>
+    async function init() {
+      await customElements.whenDefined('gmp-map');
 
-            const map = document.querySelector('gmp-map');
+      const map = document.querySelector('gmp-map');
 
-            map.innerMap.setOptions({
-                mapTypeControl: false
-            });
+      map.innerMap.setOptions({
+        mapTypeControl: false
+      });
 
-const locations = [
-    { permit_no: "107322-A", link: "https://maps.app.goo.gl/MrK8qLPyi2C1tcob8", coordinates: { lat: 24.463122, lng: 54.348888 } },
-    { permit_no: "107322-A", link: "https://maps.app.goo.gl/NjirECmy5BePg31o6", coordinates: { lat: 24.460761, lng: 54.345499 } },
-    { permit_no: "107322-A", link: "https://maps.app.goo.gl/Twn6MhkTRw7SGMwn9", coordinates: { lat: 24.463554, lng: 54.342904 } },
-    { permit_no: "107322-A", link: "https://maps.app.goo.gl/FTCDRatX2HuK38mz5", coordinates: { lat: 24.456860, lng: 54.338773 } },
-    { permit_no: "107322-A", link: "https://maps.app.goo.gl/62gzzDi2ZQ8PseLF6", coordinates: { lat: 24.457130, lng: 54.337752 } },
-    { permit_no: "107322-A", link: "https://maps.app.goo.gl/7oKSswZqF6tXY7e78", coordinates: { lat: 24.455628, lng: 54.330504 } },
-    { permit_no: "107322-A", link: "https://maps.app.goo.gl/zYXtQs2qSbmUWDAQ9", coordinates: { lat: 24.456735, lng: 54.330554 } },
-    { permit_no: "107322-A", link: "https://maps.app.goo.gl/dZfnyj2cKgZEnYnJ6", coordinates: { lat: 24.459467, lng: 54.330361 } },
-    { permit_no: "107322-A", link: "https://maps.app.goo.gl/MFaGv6mTzqXueoax7", coordinates: { lat: 24.462724, lng: 54.334667 } },
-    { permit_no: "107322-A", link: "https://maps.app.goo.gl/AroV9ygugJUgvjf46", coordinates: { lat: 24.466366, lng: 54.331249 } },
-    { permit_no: "107322-A", link: "https://maps.app.goo.gl/YPzcGZRfwcUsCzSE7", coordinates: { lat: 24.465401, lng: 54.328971 } },
-    { permit_no: "107322-A", link: "https://maps.app.goo.gl/BF9AjfSRdbieGVvs6", coordinates: { lat: 24.463229, lng: 54.324991 } },
-    { permit_no: "107322-A", link: "https://maps.app.goo.gl/scPJ5ymyZJEcCyJy9", coordinates: { lat: 24.458233, lng: 54.343694 } },
-    { permit_no: "107322-A", link: "https://maps.app.goo.gl/Jr949JzDjSf1mrXC8", coordinates: { lat: 24.460345, lng: 54.322524 } },
-    { permit_no: "111530-A", link: "https://maps.app.goo.gl/SAV7CgkNB4wAjjhF8", coordinates: { lat: 24.456430, lng: 54.336918 } },
-    { permit_no: "111554-A", link: "https://maps.app.goo.gl/G5q4U7iNY8yCekw79", coordinates: { lat: 24.455797, lng: 54.346833 } },
-    { permit_no: "119054-A", link: "https://maps.app.goo.gl/F1vuBm6A4pP67cJNA", coordinates: { lat: 24.462751, lng: 54.338100 } },
-    { permit_no: "120712-A", link: "https://maps.app.goo.gl/jYsmUkvq4wY9kAdV8", coordinates: { lat: 24.463188, lng: 54.335528 } },
-    { permit_no: "120712-A", link: "https://maps.app.goo.gl/95VMkpPWMSKhesiE9", coordinates: { lat: 24.461038, lng: 54.332961 } },
-    { permit_no: "101814-B", link: "https://maps.app.goo.gl/QMC5QrRqpLjaH4xC9", coordinates: { lat: 24.467931, lng: 54.337250 } },
-    { permit_no: "107322-B", link: "https://maps.app.goo.gl/nGBxRKyqmoSz9c877", coordinates: { lat: 24.469549, lng: 54.348306 } },
-    { permit_no: "107322-B", link: "https://maps.app.goo.gl/6EE9A9CQH7ksf1it7", coordinates: { lat: 24.478233, lng: 54.352989 } },
-    { permit_no: "107322-B", link: "https://maps.app.goo.gl/VhwRKzpvFv1z5yFt5", coordinates: { lat: 24.474243, lng: 54.349611 } },
-    { permit_no: "107322-B", link: "https://maps.app.goo.gl/U7DBY2eUQAkbqvLdA", coordinates: { lat: 24.478306, lng: 54.352306 } },
-    { permit_no: "107322-B", link: "https://maps.app.goo.gl/VneNsiAdMX1m11P66", coordinates: { lat: 24.474684, lng: 54.348611 } },
-    { permit_no: "107322-B", link: "https://maps.app.goo.gl/5E3LCu4813Sqja7s5", coordinates: { lat: 24.468369, lng: 54.358090 } },
-    { permit_no: "107322-B", link: "https://maps.app.goo.gl/GASR7UQLRnFQRJ9k8", coordinates: { lat: 24.468500, lng: 54.338611 } },
-    { permit_no: "107322-B", link: "https://maps.app.goo.gl/t8k7oeEVhNTKqQBYA", coordinates: { lat: 24.467884, lng: 54.341306 } },
-    { permit_no: "107322-B", link: "https://maps.app.goo.gl/KrdnfYdZp2uGC1N59", coordinates: { lat: 24.468636, lng: 54.337989 } },
-    { permit_no: "110399-B", link: "https://maps.app.goo.gl/6r2mbSGBtPswk58C7", coordinates: { lat: 24.472912, lng: 54.342177 } },
-    { permit_no: "113163-B", link: "https://maps.app.goo.gl/axaDc5qgWwxSxfdR9", coordinates: { lat: 24.467223, lng: 54.349028 } },
-    { permit_no: "116670-B", link: "https://maps.app.goo.gl/7gm377Uqpgi4zszY9", coordinates: { lat: 24.477542, lng: 54.352444 } },
-    { permit_no: "118913-B", link: "https://maps.app.goo.gl/n9V4Mjs7RMV5rPm3A", coordinates: { lat: 24.482374, lng: 54.352205 } },
-    { permit_no: "120754-B", link: "https://maps.app.goo.gl/Mr9wmmEdDdrJofeT7", coordinates: { lat: 24.465588, lng: 54.357083 } },
-    { permit_no: "120754-B", link: "https://maps.app.goo.gl/Mr9wmmEdDdrJofeT7", coordinates: { lat: 24.465578, lng: 54.357083 } },
-    { permit_no: "106199-C", link: "https://maps.app.goo.gl/CLucA5rwa7QdfCVe7", coordinates: { lat: 24.491070, lng: 54.358372 } },
-    { permit_no: "111709-C", link: "https://maps.app.goo.gl/RPFRbSfH5UUkrTEv9", coordinates: { lat: 24.483098, lng: 54.360205 } },
-    { permit_no: "115884-C", link: "https://maps.app.goo.gl/hn4F4LGhU2fMZJ3x9", coordinates: { lat: 24.479889, lng: 54.360389 } },
-    { permit_no: "120101-C", link: "https://maps.app.goo.gl/LK2JVHgJ4fBpvfuA7", coordinates: { lat: 24.488419, lng: 54.359796 } },
-    { permit_no: "121267-C", link: "https://maps.app.goo.gl/k87LMpqBYxrvANHi6", coordinates: { lat: 24.487306, lng: 54.351444 } },
-    { permit_no: "122790-C", link: "https://maps.app.goo.gl/RVPNexJhmZspFoF98", coordinates: { lat: 24.485583, lng: 54.351972 } },
-    { permit_no: "101687-G", link: "https://maps.app.goo.gl/rg9XjLqhpYY99AWE6", coordinates: { lat: 24.477778, lng: 54.382333 } },
-    { permit_no: "102041-G", link: "https://maps.app.goo.gl/8SBofmG6kcKqkhdP8", coordinates: { lat: 24.477778, lng: 54.368944 } },
-    { permit_no: "103778-G", link: "https://maps.app.goo.gl/VDNKSDMdccnQjKmd9", coordinates: { lat: 24.476972, lng: 54.368111 } },
-    { permit_no: "115813-G", link: "https://maps.app.goo.gl/9V7uR4YxcszQ2uo4A", coordinates: { lat: 24.477778, lng: 54.383556 } },
-    { permit_no: "118276-G", link: "https://maps.app.goo.gl/1SU74g6cnKSkdTtD6", coordinates: { lat: 24.478083, lng: 54.374583 } },
-    { permit_no: "122348-G", link: "https://maps.app.goo.gl/k3CY4LGKMkFcqhuY9", coordinates: { lat: 24.479972, lng: 54.372056 } },
-    { permit_no: "122348-G", link: "https://maps.app.goo.gl/mTLkYDx8YjC8q2Ra7", coordinates: { lat: 24.479861, lng: 54.372139 } },
-    { permit_no: "122348-G", link: "https://maps.app.goo.gl/VfRccBKVgz58e8PB9", coordinates: { lat: 24.479722, lng: 54.371944 } },
-    { permit_no: "122348-G", link: "https://maps.app.goo.gl/An3T5P5wMj8ce7dH9", coordinates: { lat: 24.479833, lng: 54.371861 } },
-    { permit_no: "103369-I", link: "https://maps.app.goo.gl/JB5srTeAjmCq7bKUA", coordinates: { lat: 24.453528, lng: 54.387194 } },
-    { permit_no: "103369-I", link: "https://maps.app.goo.gl/5YvJhJzPoqAdaTHd6", coordinates: { lat: 24.453694, lng: 54.387028 } },
-    { permit_no: "103369-I", link: "https://maps.app.goo.gl/3DmPjc88kD3ohb6t9", coordinates: { lat: 24.453750, lng: 54.387111 } },
-    { permit_no: "103369-I", link: "https://maps.app.goo.gl/cqhAVkJFZgpZhSwB9", coordinates: { lat: 24.453583, lng: 54.387278 } },
-    { permit_no: "110674-I", link: "https://maps.app.goo.gl/zrBPxq5oKDhniPEVA", coordinates: { lat: 24.464528, lng: 54.391306 } },
-    { permit_no: "111705-I", link: "https://maps.app.goo.gl/PWAxBXzx6eZ5c1vW9", coordinates: { lat: 24.463056, lng: 54.395611 } },
-    { permit_no: "117555-I", link: "https://maps.app.goo.gl/rDTUA2m2ZvRPi2oX9", coordinates: { lat: 24.460639, lng: 54.379083 } },
-    { permit_no: "118126-I", link: "https://maps.app.goo.gl/EZDqRxVgndLUgGqc8", coordinates: { lat: 24.451000, lng: 54.389639 } },
-    { permit_no: "119999-I", link: "https://maps.app.goo.gl/EJMBJNVvfnMkTeVu6", coordinates: { lat: 24.461889, lng: 54.384167 } },
-    { permit_no: "120119-I", link: "https://maps.app.goo.gl/BasdXNDhoPDHjwy38", coordinates: { lat: 24.463750, lng: 54.392194 } },
-    { permit_no: "120328-I", link: "https://maps.app.goo.gl/4wcNjNwgV1i7YzHh8", coordinates: { lat: 24.458583, lng: 54.382528 } },
-    { permit_no: "121547-I", link: "https://maps.app.goo.gl/Gt1dYC8SwXs4bu758", coordinates: { lat: 24.463417, lng: 54.389889 } },
-    { permit_no: "122222-I", link: "https://maps.app.goo.gl/cwH5XfWdW77wAAg6A", coordinates: { lat: 24.461889, lng: 54.396250 } },
-    { permit_no: "122517-I", link: "https://maps.app.goo.gl/yzKJATrZ2ysTvuDC8", coordinates: { lat: 24.450444, lng: 54.405694 } },
-    { permit_no: "68483-I", link: "https://maps.app.goo.gl/ofDNbioXv231zpaYA", coordinates: { lat: 24.445000, lng: 54.403778 } },
-    { permit_no: "103485-P", link: "https://maps.app.goo.gl/rTJKaRbAAjCYJb5AA", coordinates: { lat: 24.418278, lng: 54.464806 } },
-    { permit_no: "103485-P", link: "https://maps.app.goo.gl/jFtZfSJ8Z3quvSvk9", coordinates: { lat: 24.418583, lng: 54.465028 } },
-    { permit_no: "103485-P", link: "https://maps.app.goo.gl/Z9ebQvmnPThCDELV7", coordinates: { lat: 24.419167, lng: 54.464333 } },
-    { permit_no: "103485-P", link: "https://maps.app.goo.gl/Hdnqebzc8A3gkJEe6", coordinates: { lat: 24.418944, lng: 54.464056 } },
-    // IR
-    { permit_no: "IR 605 -I", link: "https://maps.app.goo.gl/2wxApmM4tJaPLQcVA", coordinates: { lat: 24.450219, lng: 54.405550 } },
-    { permit_no: "IR 606 -O", link: "https://maps.app.goo.gl/xPU4BmRWd1p3ry7B7", coordinates: { lat: 24.431694, lng: 54.437361 } },
-    { permit_no: "IR 607 -A", link: "https://maps.app.goo.gl/msHoEUFuwfjWp6q18", coordinates: { lat: 24.453417, lng: 54.334250 } },
-    { permit_no: "IR 608 -G", link: "https://maps.app.goo.gl/smJC7A4HzD9VNa2F9", coordinates: { lat: 24.477054, lng:54.367911 } }
-];
-const markers = locations.map(location => {
+      const locations = [
+        // Old Wet spots
+      
+        { permit_no: "Harbour Meena", coordinates: { lat: 24.518373, lng: 54.37672 }, link: "https://maps.app.goo.gl/GdzXKcjBDC2FRvCJ6", color: 'blue' },
+            { permit_no: "Location 1", coordinates: { lat: 24.519053, lng: 54.37871 }, link: "https://maps.app.goo.gl/VHzueGRZXr5tsbQ48", color: 'blue'  },
+            { permit_no: "Location 2", coordinates: { lat: 24.516075, lng: 54.381177 }, link: "https://maps.app.goo.gl/4Hu9SxJFBquV2Ls17", color: 'blue'  },
+            { permit_no: "Location 3", coordinates: { lat: 24.482784, lng: 54.394114 }, link: "https://maps.app.goo.gl/siYWk4mkSvsEjEwx5" , color: 'blue' },
+            { permit_no: "PUMPING STATION", coordinates: { lat: 24.45161, lng: 54.39732 }, link: "https://goo.gl/maps/1GXFHuxhWEsGAurGA" , color: 'blue' },
+            { permit_no: "Qasr Al Bahr Outfall", coordinates: { lat: 24.460898, lng: 54.401834 }, link: "https://maps.app.goo.gl/wzRNeGnfjAU19w7D8" , color: 'blue' },
+            { permit_no: "RD-I", coordinates: { lat: 24.460898, lng: 54.401834 }, link: "https://maps.app.goo.gl/om3iiZPGujrJv3j3A" , color: 'blue' },
+            { permit_no: "PUMPING STATION", coordinates: { lat: 24.467423, lng: 54.383244 }, link: "https://maps.app.goo.gl/WFZbEex5MAuEarvYA", color: 'blue'  },
+            { permit_no: "Location 1", coordinates: { lat: 24.467821, lng: 54.382996 }, link: "https://maps.app.goo.gl/25F83sKcNyRMTFQD8", color: 'blue'  },
+            { permit_no: "Location 2", coordinates: { lat: 24.467821, lng: 54.382996 }, link: "https://maps.app.goo.gl/25F83sKcNyRMTFQD8" , color: 'blue' },
+            { permit_no: "W-45", coordinates: { lat: 24.467317, lng: 54.333489 }, link: "https://maps.app.goo.gl/j6WcZm5TRki2XTXn9", color: 'blue'  },
+            { permit_no: "Al Bateen E48", coordinates: { lat: 24.428409, lng: 54.450023 }, link: "https://maps.app.goo.gl/1y1kuNPEiFnqEGvf6" , color: 'blue' },
+            { permit_no: "W-17/02", coordinates: { lat: 24.460606, lng: 54.35188 }, link: "https://maps.app.goo.gl/mV2mAVtbg7Dhu6vB9" , color: 'blue' },
+            { permit_no: "(Al Khalidiyah)", coordinates: { lat: 24.501348, lng: 54.37549 }, link: "https://maps.app.goo.gl/S7jUMPnsgUiqWiWo9" , color: 'blue' },
+            { permit_no: "W-12", coordinates: { lat: 24.465038, lng: 54.335434 }, link: "https://maps.app.goo.gl/TNFdU5nXf7CaXBUn9" , color: 'blue' },
+            { permit_no: "(Al Bateen)", coordinates: { lat: 24.465877, lng: 54.33469 }, link: "https://maps.app.goo.gl/2LQV5GVXPUbBFKoN6" , color: 'blue' },
+            { permit_no: "(Al Bateen)", coordinates: { lat: 24.465877, lng: 54.33469 }, link: "https://maps.app.goo.gl/2LQV5GVXPUbBFKoN6", color: 'blue'  },
+            { permit_no: "(Al Sa'adah)", coordinates: { lat: 24.438009, lng: 54.433035 }, link: "https://maps.app.goo.gl/jQKLWM7x3tqWX6fb6" , color: 'blue' },
+            { permit_no: "(Al Sa'adah)", coordinates: { lat: 24.437242, lng: 54.432158 }, link: "https://maps.app.goo.gl/yz9DuDz1gQuWhhmT8" , color: 'blue' },
+            { permit_no: "(Al Sa'adah)", coordinates: { lat: 24.437473, lng: 54.433821 }, link: "https://maps.app.goo.gl/kcUVT2EiR7MJ7J289", color: 'blue'  },
+            { permit_no: "Mamura Building RD-I", coordinates: { lat: 24.463456, lng: 54.389204 }, link: "https://maps.app.goo.gl/aY9Wm97Arezkjzd76" , color: 'blue' },
+            { permit_no: "Mubadala tower RD-I", coordinates: { lat: 24.460037, lng: 54.38946 }, link: "https://maps.app.goo.gl/EVD18DeuaPbuvPZJ7" , color: 'blue' },
+            { permit_no: "(Al Khalidiyah)", coordinates: { lat: 24.460037, lng: 54.38946 }, link: "https://maps.app.goo.gl/EVD18DeuaPbuvPZJ7" , color: 'blue' },
+            { permit_no: "Location 1", coordinates: { lat: 24.461638, lng: 54.387959 }, link: "https://maps.app.goo.gl/KVPtxVX3MqVQdZau5" , color: 'blue' },
+            { permit_no: "(Al Khalidiyah)", coordinates: { lat: 24.461638, lng: 54.387959 }, link: "https://maps.app.goo.gl/KVPtxVX3MqVQdZau5" , color: 'blue' },
+            { permit_no: "Location 2", coordinates: { lat: 24.461638, lng: 54.387959 }, link: "https://maps.app.goo.gl/KVPtxVX3MqVQdZau5", color: 'blue'  },
+            { permit_no: "Al Bateen Graveyard", coordinates: { lat: 24.461093, lng: 54.341244 }, link: "https://maps.app.goo.gl/VFJYUsSRRmDo4nqY6", color: 'blue'  },
+            { permit_no: "World Trade Centre", coordinates: { lat: 24.487611, lng: 54.357897 }, link: "https://maps.app.goo.gl/WvfarYf8iHRRec7L9" , color: 'blue' },
+            { permit_no: "Al Bahr Towers", coordinates: { lat: 24.456041, lng: 54.400591 }, link: "https://maps.app.goo.gl/z7aqMcALxGSNR8Kj8", color: 'blue'  },
+            { permit_no: "Sheikh Khalifa Medical City", coordinates: { lat: 24.470358, lng: 54.367079 }, link: "https://maps.app.goo.gl/L7K8WvPrpLgY3ZBH9" , color: 'blue' },
+            { permit_no: "Office Club", coordinates: { lat: 24.403462, lng: 54.476694 }, link: "https://maps.app.goo.gl/7kUvkYTTGmvotM2v5" },
+            { permit_no: "Airport Road(Bridge)", coordinates: { lat: 24.443084, lng: 54.396163 }, link: "https://maps.app.goo.gl/w7cuC2pm4vj3Gbe87" , color: 'blue' },
+
+            // New Wetspots 
+    
+          { permit_no: "Abu Dhabi Central Bus Station", coordinates: { lat: 24.470035, lng: 54.376386 }, link: "https://maps.app.goo.gl/boTKxg5JZ811PwGv5", color: 'red' },
+          { permit_no: "Al Karimeen St", coordinates: { lat: 24.456487, lng: 54.373018 }, link: "https://maps.app.goo.gl/9xocTzF8hRBEjpTC9", color: 'red' },
+          { permit_no: "E18_01 (Sheikh Rashid Bin Saeed St)", coordinates: { lat: 24.473414, lng: 54.367848 }, link: "https://maps.app.goo.gl/WPmVAg22QpGRVpPy7", color: 'red' },
+          { permit_no: "W15_02", coordinates: { lat: 24.458862, lng: 54.373843 }, link: "https://maps.app.goo.gl/PYnrkBNqmktyskJj6" , color: 'red'},
+          { permit_no: "E19_01", coordinates: { lat: 24.464775, lng: 54.377373 }, link: "https://maps.app.goo.gl/fahxHnrkiVVNJgF36", color: 'red' },
+          { permit_no: "Qasr Al Bahr (Qasr Al Bahr St )", coordinates: { lat: 24.470237, lng: 54.395966 }, link: "https://maps.app.goo.gl/vHRujHuH4eVWECwd6", color: 'red' },
+          { permit_no: "E18_03", coordinates: { lat: 24.483473, lng: 54.378652 }, link: "https://maps.app.goo.gl/uGZz1C7FNHUdEFvw5", color: 'red' },
+          { permit_no: "W13_01 (Sheikh Khalifa Medical City)", coordinates: { lat: 24.469883, lng: 54.367013 }, link: "https://maps.app.goo.gl/xTY6LURtnSUtiCGC9", color: 'red' },
+          { permit_no: "E18_02", coordinates: { lat: 24.477708, lng: 54.380813 }, link: "https://maps.app.goo.gl/DbbxA32SgyhkhLAh6", color: 'red' },
+          { permit_no: "W52", coordinates: { lat: 24.432477, lng: 54.402602 }, link: "https://maps.app.goo.gl/V1YxzxcWg3fFtrKr7", color: 'red' },
+          { permit_no: "E11(ADM)", coordinates: { lat: 24.486705, lng: 54.373975 }, link: "https://maps.app.goo.gl/oCcNSVC4s7LeweGP9" , color: 'red'},
+          { permit_no: "E15", coordinates: { lat: 24.495647, lng: 54.37673 }, link: "https://maps.app.goo.gl/417qCsdQNeCuyz639" , color: 'red'},
+          { permit_no: "E34_02", coordinates: { lat: 24.429222, lng: 54.425727 }, link: "https://maps.app.goo.gl/c8o15vN8QxovKNv9A", color: 'red' },
+          { permit_no: "W48", coordinates: { lat: 24.430375, lng: 54.413836 }, link: "https://maps.app.goo.gl/AR2yqckT7CAuN74m6", color: 'red' },
+          { permit_no: "W4", coordinates: { lat: 24.478494, lng: 54.354332 }, link: "https://maps.app.goo.gl/T6yWiZUCRqgqsEHD9", color: 'red' },
+          { permit_no: "W19_01", coordinates: { lat: 24.450081, lng: 54.366547 }, link: "https://maps.app.goo.gl/1XNvq3oAaRpyTfxC9" , color: 'red'},
+          { permit_no: "W14_01", coordinates: { lat: 24.457928, lng: 54.365159 }, link: "https://maps.app.goo.gl/dHEiGdCKXV6VjoCa8", color: 'red' },
+          { permit_no: "Kasser Al Amwaj", coordinates: { lat: 24.47849, lng: 54.332598 }, link: "https://maps.app.goo.gl/QktsgHaiBadSMAaN9" },
+          { permit_no: "E4_01", coordinates: { lat: 24.481543, lng: 54.368257 }, link: "https://maps.app.goo.gl/u37wJwxWibceSNDYA" , color: 'red'},
+          { permit_no: "W27_01", coordinates: { lat: 24.437925, lng: 54.363177 }, link: "https://maps.app.goo.gl/7ev8TW6NxyGaXq2S6" , color: 'red'},
+          { permit_no: "E22_02", coordinates: { lat: 24.458232, lng: 54.385508 }, link: "https://maps.app.goo.gl/HmP3WjCy1MDx9Kqd7", color: 'red' },
+          { permit_no: "E4_02", coordinates: { lat: 24.4873, lng: 54.371023 }, link: "https://maps.app.goo.gl/H2wbKqkfnSkHYQtE9" , color: 'red'},
+          { permit_no: "E19_02", coordinates: { lat: 24.479254, lng: 54.38703 }, link: "https://maps.app.goo.gl/jrGk7gyz9riGGZMR7" , color: 'red'},
+          { permit_no: "W10", coordinates: { lat: 24.46995, lng: 54.342328 }, link: "https://maps.app.goo.gl/3CqfLDjkZtpsm8FM8" , color: 'red'},
+          { permit_no: "W15_02", coordinates: { lat: 24.45948, lng: 54.374016 }, link: "https://maps.app.goo.gl/CwWL52FZdwM6nLvR8" , color: 'red'},
+          { permit_no: "E48", coordinates: { lat: 24.434148, lng: 54.456707 }, link: "https://maps.app.goo.gl/k6HTwDLvoSrNmbaZ6" , color: 'red'},
+          { permit_no: "W23_01", coordinates: { lat: 24.439659, lng: 54.378493 }, link: "https://maps.app.goo.gl/1e4t3ZrYXqAsyWpo7", color: 'red' },
+          { permit_no: "W13_02", coordinates: { lat: 24.465726, lng: 54.364433 }, link: "https://maps.app.goo.gl/hMzQQ448njW6xFEU9", color: 'red' },
+          { permit_no: "W47", coordinates: { lat: 24.432258, lng: 54.402976 }, link: "https://maps.app.goo.gl/UbDPu4PCuuNUKccP7", color: 'red' },
+          { permit_no: "E20_01", coordinates: { lat: 24.46486, lng: 54.382522 }, link: "https://maps.app.goo.gl/4vLExEeKkoWhqPBY6", color: 'red' },
+          { permit_no: "E20_01", coordinates: { lat: 24.462432, lng: 54.383531 }, link: "https://maps.app.goo.gl/rjcdXcg56W5s6t139", color: 'red' },
+
+  
+      ];
+
+      const markers = locations.map(location => {
         const marker = new google.maps.Marker({
           position: location.coordinates,
           title: location.permit_no,
@@ -103,6 +100,9 @@ const markers = locations.map(location => {
             fontWeight: 'bold'
           },
           map: null, // Initially not shown
+          icon: {
+            url: `http://maps.google.com/mapfiles/ms/icons/${location.color}-dot.png`, // Use red or blue marker icon based on color
+          }
         });
 
         marker.addListener('click', function () {
@@ -111,73 +111,74 @@ const markers = locations.map(location => {
 
         return marker;
       });
+
       const sidePanel = document.getElementById('side-panel');
 
-const selectAllCheckbox = document.createElement('input');
-selectAllCheckbox.type = 'checkbox';
-selectAllCheckbox.id = 'select-all';
-selectAllCheckbox.addEventListener('change', (event) => {
-  const isChecked = event.target.checked;
-  document.querySelectorAll('.location-checkbox').forEach(checkbox => {
-    checkbox.checked = isChecked;
-    const index = checkbox.dataset.index;
-    if (isChecked) {
-      markers[index].setMap(map.innerMap);
-    } else {
-      markers[index].setMap(null);
+      const selectAllCheckbox = document.createElement('input');
+      selectAllCheckbox.type = 'checkbox';
+      selectAllCheckbox.id = 'select-all';
+      selectAllCheckbox.addEventListener('change', (event) => {
+        const isChecked = event.target.checked;
+        document.querySelectorAll('.location-checkbox').forEach(checkbox => {
+          checkbox.checked = isChecked;
+          const index = checkbox.dataset.index;
+          if (isChecked) {
+            markers[index].setMap(map.innerMap);
+          } else {
+            markers[index].setMap(null);
+          }
+        });
+      });
+
+      const selectAllLabel = document.createElement('label');
+      selectAllLabel.htmlFor = 'select-all';
+      selectAllLabel.textContent = 'Select All';
+
+      sidePanel.appendChild(selectAllCheckbox);
+      sidePanel.appendChild(selectAllLabel);
+      sidePanel.appendChild(document.createElement('br'));
+
+      locations.forEach((location, index) => {
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.id = `location-${index}`;
+        checkbox.classList.add('location-checkbox');
+        checkbox.dataset.index = index;
+        checkbox.checked = false;
+        checkbox.addEventListener('change', (event) => {
+          const isChecked = event.target.checked;
+          if (isChecked) {
+            markers[index].setMap(map.innerMap);
+          } else {
+            markers[index].setMap(null);
+          }
+          updateSelectAllCheckbox();
+        });
+
+        const label = document.createElement('label');
+        label.htmlFor = `location-${index}`;
+        label.textContent = location.permit_no;
+
+        const br = document.createElement('br');
+
+        sidePanel.appendChild(checkbox);
+        sidePanel.appendChild(label);
+        sidePanel.appendChild(br);
+      });
+
+      function updateSelectAllCheckbox() {
+        const allChecked = document.querySelectorAll('.location-checkbox:checked').length === locations.length;
+        selectAllCheckbox.checked = allChecked;
+      }
     }
-  });
-});
 
-const selectAllLabel = document.createElement('label');
-selectAllLabel.htmlFor = 'select-all';
-selectAllLabel.textContent = 'Select All';
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
 
-sidePanel.appendChild(selectAllCheckbox);
-sidePanel.appendChild(selectAllLabel);
-sidePanel.appendChild(document.createElement('br'));
-
-locations.forEach((location, index) => {
-  const checkbox = document.createElement('input');
-  checkbox.type = 'checkbox';
-  checkbox.id = `location-${index}`;
-  checkbox.classList.add('location-checkbox');
-  checkbox.dataset.index = index;
-  checkbox.checked = false;
-  checkbox.addEventListener('change', (event) => {
-    const isChecked = event.target.checked;
-    if (isChecked) {
-      markers[index].setMap(map.innerMap);
-    } else {
-      markers[index].setMap(null);
-    }
-    updateSelectAllCheckbox();
-  });
-
-  const label = document.createElement('label');
-  label.htmlFor = `location-${index}`;
-  label.textContent = location.permit_no;
-
-  const br = document.createElement('br');
-
-  sidePanel.appendChild(checkbox);
-  sidePanel.appendChild(label);
-  sidePanel.appendChild(br);
-});
-
-function updateSelectAllCheckbox() {
-  const allChecked = document.querySelectorAll('.location-checkbox:checked').length === locations.length;
-  selectAllCheckbox.checked = allChecked;
-}
-}
-
-document.addEventListener('DOMContentLoaded', init);
-
-    </script>
-
-    <script type="module" src="https://unpkg.com/@googlemaps/extended-component-library@0.6"></script>
-    <style>
-    html, body {
+  <script type="module" src="https://unpkg.com/@googlemaps/extended-component-library@0.6"></script>
+  <style>
+    html,
+    body {
       height: 100%;
       margin-top: 70px;
       padding: 0;
@@ -206,7 +207,7 @@ document.addEventListener('DOMContentLoaded', init);
 
     .navbar-custom {
       display: flex;
-      align-items:center;
+      align-items: center;
       justify-content: space-around;
       background-color: #ffffff;
       padding: 10px 20px;
@@ -238,38 +239,34 @@ document.addEventListener('DOMContentLoaded', init);
       font-size: 20px;
       font-weight: bold;
     }
-
-
-    </style>
+  </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-xl navbar-custom">
-      <div class="navbar-brand">
-        <img src="royalGardens.jpeg" alt="Royal Gardens Logo">
-      </div>
-      <div class="navbar-brand">
-        <h2>SW10 - RD</h2>
-      </div>
-      <div class="navbar-brand">
-        <img src="municipality.jpeg" alt="Municipality Logo">
-      </div>
-    </nav>
-  
-    <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50 d-flex 
-      align-items-center justify-content-center">
-      <div class="spinner-grow text-primary" role="status"></div>
+  <nav class="navbar navbar-light navbar-expand-xl navbar-custom">
+    <div class="navbar-brand">
+      <img src="royalGardens.jpeg" alt="Royal Gardens Logo">
     </div>
-  
-    <gmpx-api-loader key="AIzaSyCXn3_1o4fZgmtID0onViy02TxBPFBzK7g"
-      solution-channel="GMP_GE_mapsandplacesautocomplete_v1">
-    </gmpx-api-loader>
-    <div id="map-container">
-      <gmp-map center="24.4539,54.3773" zoom="10" map-id="DEMO_MAP_ID" scrollwheel="true"></gmp-map>
+    <div class="navbar-brand">
+      <h2>SW10 - RD | Color Blue for Old Wet Spots</h2>
     </div>
-    <div id="side-panel">
-      <h1>RD</h1>
+    <div class="navbar-brand">
+      <img src="municipality.jpeg" alt="Municipality Logo">
     </div>
-  </body>
+  </nav>
+
+  <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-grow text-primary" role="status"></div>
+  </div>
+
+  <gmpx-api-loader key="AIzaSyCXn3_1o4fZgmtID0onViy02TxBPFBzK7g" solution-channel="GMP_GE_mapsandplacesautocomplete_v1">
+  </gmpx-api-loader>
+  <div id="map-container">
+    <gmp-map center="24.4539,54.3773" zoom="10" map-id="DEMO_MAP_ID" scrollwheel="true"></gmp-map>
+  </div>
+  <div id="side-panel">
+    <h1>RD</h1>
+  </div>
+</body>
 
 </html>

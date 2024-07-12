@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>RoyalGardens</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+  <link href="royalGardens.jpeg" rel="icon">
+  <script>
+    async function init() {
+      await customElements.whenDefined('gmp-map');
+
+      const map = document.querySelector('gmp-map');
+
+      map.innerMap.setOptions({
+        mapTypeControl: false
+      });
+
+      const locations = [
+        // Old Wet spots
+        { permit_no: "Harbour Meena", coordinates: { lat: 24.518373, lng: 54.37672 }, link: "https://maps.app.goo.gl/GdzXKcjBDC2FRvCJ6", color: 'blue' },
+        { permit_no: "Location 1", coordinates: { lat: 24.519053, lng: 54.37871 }, link: "https://maps.app.goo.gl/VHzueGRZXr5tsbQ48", color: 'blue' },
+        // Add more old wet spots here...
+
+        // New Wet spots
+        { permit_no: "Abu Dhabi Central Bus Station", coordinates: { lat: 24.470035, lng: 54.376386 }, link: "https://maps.app.goo.gl/boTKxg5JZ811PwGv5", color: 'red' },
+        { permit_no: "Al Karimeen St", coordinates: { lat: 24.456487, lng: 54.373018 }, link: "https://maps.app.goo.gl/9xocTzF8hRBEjpTC9", color: 'red' },
+        // Add more new wet spots here...
+      ];
+
+      const markers = locations.map(location => {
+        const marker = new google.maps.Marker({
+          position: location.coordinates,
+          title: location.permit_no,
+          label: {
+            text: location.permit_no,
+            fontWeight: 'bold'
+          },
+          map: null, // Initially not shown
+          icon: {
+            url: `http://maps.google.com/mapfiles/ms/icons/${location.color}-dot.png`, // Use red or blue marker icon based on color
+          }
+        });
+
+        marker.addListener('click', function () {
+          window.open(location.link, '_blank');
+        });
+
+        return marker;
+      });
+
+      const sidePanel = document.getElementById('side-panel');
+
+      const selectAllCheckbox = document.createElement('input');
+      selectAllCheckbox.type = 'checkbox';
+      selectAllCheckbox.id = 'select-all';
+      selectAllCheckbox.addEventListener('change', (event) => {
+        const isChecked = event.target.checked;
+        document.querySelectorAll('.location-checkbox').forEach(checkbox => {
+          checkbox.checked = isChecked;
+          const index = checkbox.dataset.index;
+          if (isChecked) {
+            markers[index].setMap(map.innerMap);
+          } else {
+            markers[index].setMap(null);
+          }
+        });
+      });
+
+      const selectAllLabel = document.createElement('label');
+      selectAllLabel.htmlFor = 'select-all';
+      selectAllLabel.textContent = 'Select All';
+
+      sidePanel.appendChild(selectAllCheckbox);
+      sidePanel.appendChild(selectAllLabel);
+      sidePanel.appendChild(document.createElement('br'));
+
+      locations.forEach((location, index) => {
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.id = `location-${index}`;
+        checkbox.classList.add('location-checkbox');
+        checkbox.dataset.index = index;
+        checkbox.checked = false;
+        checkbox.addEventListener('change', (event) => {
+          const isChecked = event.target.checked;
+          if (isChecked) {
+            markers[index].setMap(map.innerMap);
+          } else {
+            markers[index].setMap(null);
+          }
+          updateSelectAllCheckbox();
+        });
+
+        const label = document.createElement('label');
+        label.htmlFor = `location-${index}`;
+        label.textContent = location.permit_no;
+
+        const br = document.createElement('br');
+
+        sidePanel.appendChild(checkbox);
+        sidePanel.appendChild(label);
+        sidePanel.appendChild(br);
+      });
+
+      function updateSelectAllCheckbox() {
+        const allChecked = document.querySelectorAll('.location-checkbox:checked').length === locations.length;
+        selectAllCheckbox.checked = allChecked;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+
+  <script type="module" src="https://unpkg.com/@googlemaps/extended-component-library@0.6"></script>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin-top: 70px;
+      padding: 0;
+      display: flex;
+      width: 100%;
+    }
+
+    #side-panel {
+      padding: 10px;
+      position: fixed;
+      top: 100px;
+      right: 0;
+      background-color: #fff;
+      overflow-y: auto;
+      height: 100%;
+      width: 30%;
+      font-size: small;
+    }
+
+    #map-container {
+      flex: 1;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .navbar-custom {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background-color: #ffffff;
+      padding: 10px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-brand p {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+
+    .navbar-brand img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .navbar-brand p {
+      margin-left: 10px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-light navbar-expand-xl navbar-custom">
+    <div class="navbar-brand">
+      <img src="royalGardens.jpeg" alt="Royal Gardens Logo">
+    </div>
+    <div class="navbar-brand">
+      <h2>SW10 - RD</h2>
+    </div>
+    <div class="navbar-brand">
+      <img src="municipality.jpeg" alt="Municipality Logo">
+    </div>
+  </nav>
+
+  <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-grow text-primary" role="status"></div>
+  </div>
+
+  <gmpx-api-loader key="AIzaSyCXn3_1o4fZgmtID0onViy02TxBPFBzK7g" solution-channel="GMP_GE_mapsandplacesautocomplete_v1">
+  </gmpx-api-loader>
+  <div id="map-container">
+    <gmp-map center="24.4539,54.3773" zoom="10" map-id="DEMO_MAP_ID" scrollwheel="true"></gmp-map>
+  </div>
+  <div id="side-panel">
+    <h1>RD</h1>
+  </div>
+</body>
+
+</html>
