@@ -19,310 +19,36 @@
       });
 
       const locations = [
-        // Old Wet spots
-      
-        { permit_no: "Harbour Meena Location 1", coordinates: { lat: 24.518373, lng: 54.37672 }, link: "https://maps.app.goo.gl/GdzXKcjBDC2FRvCJ6", color: 'red' },
-            { permit_no: "Harbour Meena Location 2", coordinates: { lat: 24.519053, lng: 54.37871 }, link: "https://maps.app.goo.gl/VHzueGRZXr5tsbQ48", color: 'red'  },
-            { permit_no: "Harbour Meena Location 3", coordinates: { lat: 24.516075, lng: 54.381177 }, link: "https://maps.app.goo.gl/4Hu9SxJFBquV2Ls17", color: 'red'  },
-            { permit_no: "PUMPING STATION", coordinates: { lat: 24.482784, lng: 54.394114 }, link: "https://maps.app.goo.gl/siYWk4mkSvsEjEwx5" , color: 'red' },
-            { permit_no: "Infront CID Building ", coordinates: { lat: 24.45161, lng: 54.39732 }, link: "https://goo.gl/maps/1GXFHuxhWEsGAurGA" , color: 'red' },
-            { permit_no: "Qasr Al Bahr Outfall", coordinates: { lat: 24.460889, lng: 54.401833 }, link: "https://maps.app.goo.gl/wzRNeGnfjAU19w7D8" , color: 'red' },
-            // { permit_no: "RD-I PUMPING STATION", coordinates: { lat: 24.450889, lng: 54.407167 }, link: "https://maps.app.goo.gl/om3iiZPGujrJv3j3A" , color: 'red' },
-            { permit_no: "Delma Bridge Location 1", coordinates: { lat: 24.467423, lng: 54.383244 }, link: "https://maps.app.goo.gl/WFZbEex5MAuEarvYA", color: 'red'  },
-            { permit_no: "Delma Bridge Location 2", coordinates: { lat: 24.467821, lng: 54.382996 }, link: "https://maps.app.goo.gl/25F83sKcNyRMTFQD8", color: 'red'  },
-            // { permit_no: "Location 2", coordinates: { lat: 24.467821, lng: 54.382996 }, link: "https://maps.app.goo.gl/25F83sKcNyRMTFQD8" , color: 'red' },
-            { permit_no: "W-45", coordinates: { lat: 24.467317, lng: 54.333489 }, link: "https://maps.app.goo.gl/j6WcZm5TRki2XTXn9", color: 'red'  },
-            { permit_no: "Al Bateen E48", coordinates: { lat: 24.428409, lng: 54.450023 }, link: "https://maps.app.goo.gl/1y1kuNPEiFnqEGvf6" , color: 'red' },
-            { permit_no: "W-17/02 (Al Khalidiyah)", coordinates: { lat: 24.460606, lng: 54.35188 }, link: "https://maps.app.goo.gl/mV2mAVtbg7Dhu6vB9" , color: 'red' },
-            { permit_no: "(Al Zahiyah)", coordinates: { lat: 24.501348, lng: 54.37549 }, link: "https://maps.app.goo.gl/S7jUMPnsgUiqWiWo9" , color: 'red' },
-            { permit_no: "W-12 (Al Bateen)", coordinates: { lat: 24.465038, lng: 54.335434 }, link: "https://maps.app.goo.gl/TNFdU5nXf7CaXBUn9" , color: 'red' },
-            { permit_no: "W-38 (Al Bateen)", coordinates: { lat: 24.465877, lng: 54.33469 }, link: "https://maps.app.goo.gl/2LQV5GVXPUbBFKoN6" , color: 'red' },
-            // { permit_no: "(Al Bateen)", coordinates: { lat: 24.465877, lng: 54.33469 }, link: "https://maps.app.goo.gl/2LQV5GVXPUbBFKoN6", color: 'red'  },
-            { permit_no: "(Al Sa'adah)", coordinates: { lat: 24.438009, lng: 54.433035 }, link: "https://maps.app.goo.gl/jQKLWM7x3tqWX6fb6" , color: 'red' },
-            { permit_no: "(Al Sa'adah)", coordinates: { lat: 24.437242, lng: 54.432158 }, link: "https://maps.app.goo.gl/yz9DuDz1gQuWhhmT8" , color: 'red' },
-            { permit_no: "(Al Sa'adah)", coordinates: { lat: 24.437473, lng: 54.433821 }, link: "https://maps.app.goo.gl/kcUVT2EiR7MJ7J289", color: 'red'  },
-            { permit_no: "Mamura Building RD-I", coordinates: { lat: 24.463456, lng: 54.389204 }, link: "https://maps.app.goo.gl/aY9Wm97Arezkjzd76" , color: 'red' },
-            { permit_no: "Mubadala tower RD-I Location 1", coordinates: { lat: 24.460037, lng: 54.38946 }, link: "https://maps.app.goo.gl/EVD18DeuaPbuvPZJ7" , color: 'red' },
-            { permit_no: "Mubadala tower RD-I Location 2", coordinates: { lat: 24.461638, lng: 54.387959 }, link: "https://maps.app.goo.gl/KVPtxVX3MqVQdZau5" , color: 'red' },
-            // { permit_no: "(Al Khalidiyah)", coordinates: { lat: 24.460037, lng: 54.38946 }, link: "https://maps.app.goo.gl/EVD18DeuaPbuvPZJ7" , color: 'red' },
-            // { permit_no: "Location 1", coordinates: { lat: 24.461638, lng: 54.387959 }, link: "https://maps.app.goo.gl/KVPtxVX3MqVQdZau5" , color: 'red' },
-            // { permit_no: "(Al Khalidiyah)", coordinates: { lat: 24.461638, lng: 54.387959 }, link: "https://maps.app.goo.gl/KVPtxVX3MqVQdZau5" , color: 'red' },
-            // { permit_no: "Location 2", coordinates: { lat: 24.461638, lng: 54.387959 }, link: "https://maps.app.goo.gl/KVPtxVX3MqVQdZau5", color: 'red'  },
-            { permit_no: "Al Bateen Graveyard", coordinates: { lat: 24.461093, lng: 54.341244 }, link: "https://maps.app.goo.gl/VFJYUsSRRmDo4nqY6", color: 'red'  },
-            { permit_no: "World Trade Centre", coordinates: { lat: 24.487611, lng: 54.357897 }, link: "https://maps.app.goo.gl/WvfarYf8iHRRec7L9" , color: 'red' },
-            { permit_no: "Al Bahr Towers", coordinates: { lat: 24.456041, lng: 54.400591 }, link: "https://maps.app.goo.gl/z7aqMcALxGSNR8Kj8", color: 'red'  },
-            { permit_no: "Sheikh Khalifa Medical City", coordinates: { lat: 24.470358, lng: 54.367079 }, link: "https://maps.app.goo.gl/L7K8WvPrpLgY3ZBH9" , color: 'red' },
-            { permit_no: "Office Club", coordinates: { lat: 24.403462, lng: 54.476694 }, link: "https://maps.app.goo.gl/7kUvkYTTGmvotM2v5", color: "red" },
-            { permit_no: "Airport Road(Bridge)", coordinates: { lat: 24.443084, lng: 54.396163 }, link: "https://maps.app.goo.gl/w7cuC2pm4vj3Gbe87" , color: 'red' },
-           
-
-            
-            // New Wetspots 
-          { permit_no: "Al Karamah st (Umm Al Emarat Park)", coordinates: { lat: 24.4523256, lng: 54.3790021 }, link: "https://maps.app.goo.gl/2ouqqGMbeKuFLN3z5", color: 'red' },
-          { permit_no: "Abu Dhabi Central Bus Station", coordinates: { lat: 24.470035, lng: 54.376386 }, link: "https://maps.app.goo.gl/boTKxg5JZ811PwGv5", color: 'red' },
-          { permit_no: "Al Karimeen St", coordinates: { lat: 24.456487, lng: 54.373018 }, link: "https://maps.app.goo.gl/9xocTzF8hRBEjpTC9", color: 'red' },
-          { permit_no: "E18_01 (Sheikh Rashid Bin Saeed St)", coordinates: { lat: 24.473414, lng: 54.367848 }, link: "https://maps.app.goo.gl/WPmVAg22QpGRVpPy7", color: 'red' },
-          { permit_no: "W15_02", coordinates: { lat: 24.458862, lng: 54.373843 }, link: "https://maps.app.goo.gl/PYnrkBNqmktyskJj6" , color: 'red'},
-          { permit_no: "E19_01", coordinates: { lat: 24.464775, lng: 54.377373 }, link: "https://maps.app.goo.gl/fahxHnrkiVVNJgF36", color: 'red' },
-          { permit_no: "Qasr Al Bahr (Qasr Al Bahr St )", coordinates: { lat: 24.470237, lng: 54.395966 }, link: "https://maps.app.goo.gl/vHRujHuH4eVWECwd6", color: 'red' },
-          { permit_no: "E18_03", coordinates: { lat: 24.483473, lng: 54.378652 }, link: "https://maps.app.goo.gl/uGZz1C7FNHUdEFvw5", color: 'red' },
-          { permit_no: "W13_01 (Sheikh Khalifa Medical City)", coordinates: { lat: 24.469883, lng: 54.367013 }, link: "https://maps.app.goo.gl/xTY6LURtnSUtiCGC9", color: 'red' },
-          { permit_no: "E18_02", coordinates: { lat: 24.477708, lng: 54.380813 }, link: "https://maps.app.goo.gl/DbbxA32SgyhkhLAh6", color: 'red' },
-          { permit_no: "W52", coordinates: { lat: 24.432477, lng: 54.402602 }, link: "https://maps.app.goo.gl/V1YxzxcWg3fFtrKr7", color: 'red' },
-          { permit_no: "E11(ADM)", coordinates: { lat: 24.486705, lng: 54.373975 }, link: "https://maps.app.goo.gl/oCcNSVC4s7LeweGP9" , color: 'red'},
-          { permit_no: "E15", coordinates: { lat: 24.495647, lng: 54.37673 }, link: "https://maps.app.goo.gl/417qCsdQNeCuyz639" , color: 'red'},
-          { permit_no: "E34_02", coordinates: { lat: 24.429222, lng: 54.425727 }, link: "https://maps.app.goo.gl/c8o15vN8QxovKNv9A", color: 'red' },
-          { permit_no: "W48", coordinates: { lat: 24.430375, lng: 54.413836 }, link: "https://maps.app.goo.gl/AR2yqckT7CAuN74m6", color: 'red' },
-          { permit_no: "W4", coordinates: { lat: 24.478494, lng: 54.354332 }, link: "https://maps.app.goo.gl/T6yWiZUCRqgqsEHD9", color: 'red' },
-          { permit_no: "W19_01", coordinates: { lat: 24.450081, lng: 54.366547 }, link: "https://maps.app.goo.gl/1XNvq3oAaRpyTfxC9" , color: 'red'},
-          { permit_no: "W14_01", coordinates: { lat: 24.457928, lng: 54.365159 }, link: "https://maps.app.goo.gl/dHEiGdCKXV6VjoCa8", color: 'red' },
-          { permit_no: "Kasser Al Amwaj", coordinates: { lat: 24.47849, lng: 54.332598 }, link: "https://maps.app.goo.gl/QktsgHaiBadSMAaN9" , color : "red"},
-          { permit_no: "E4_01", coordinates: { lat: 24.481543, lng: 54.368257 }, link: "https://maps.app.goo.gl/u37wJwxWibceSNDYA" , color: 'red'},
-          { permit_no: "W27_01", coordinates: { lat: 24.437925, lng: 54.363177 }, link: "https://maps.app.goo.gl/7ev8TW6NxyGaXq2S6" , color: 'red'},
-          { permit_no: "E22_02", coordinates: { lat: 24.458232, lng: 54.385508 }, link: "https://maps.app.goo.gl/HmP3WjCy1MDx9Kqd7", color: 'red' },
-          { permit_no: "E4_02", coordinates: { lat: 24.4873, lng: 54.371023 }, link: "https://maps.app.goo.gl/H2wbKqkfnSkHYQtE9" , color: 'red'},
-          { permit_no: "E19_02", coordinates: { lat: 24.479254, lng: 54.38703 }, link: "https://maps.app.goo.gl/jrGk7gyz9riGGZMR7" , color: 'red'},
-          { permit_no: "W10", coordinates: { lat: 24.46995, lng: 54.342328 }, link: "https://maps.app.goo.gl/3CqfLDjkZtpsm8FM8" , color: 'red'},
-          { permit_no: "W15_02", coordinates: { lat: 24.45948, lng: 54.374016 }, link: "https://maps.app.goo.gl/CwWL52FZdwM6nLvR8" , color: 'red'},
-          { permit_no: "E48", coordinates: { lat: 24.434148, lng: 54.456707 }, link: "https://maps.app.goo.gl/k6HTwDLvoSrNmbaZ6" , color: 'red'},
-          { permit_no: "W23_01", coordinates: { lat: 24.439659, lng: 54.378493 }, link: "https://maps.app.goo.gl/1e4t3ZrYXqAsyWpo7", color: 'red' },
-          { permit_no: "W13_02", coordinates: { lat: 24.465726, lng: 54.364433 }, link: "https://maps.app.goo.gl/hMzQQ448njW6xFEU9", color: 'red' },
-          { permit_no: "W47", coordinates: { lat: 24.432258, lng: 54.402976 }, link: "https://maps.app.goo.gl/UbDPu4PCuuNUKccP7", color: 'red' },
-          { permit_no: "E20_01", coordinates: { lat: 24.46486, lng: 54.382522 }, link: "https://maps.app.goo.gl/4vLExEeKkoWhqPBY6", color: 'red' },
-          { permit_no: "E20_01", coordinates: { lat: 24.462432, lng: 54.383531 }, link: "https://maps.app.goo.gl/rjcdXcg56W5s6t139", color: 'red' },
-      // New links 
-
-  
-   { permit_no: "W38", coordinates: { lat: 24.465749,  lng:54.333624 }, link: "https://www.google.com/maps/search/?api=1&query=24.465749,54.333624", color: 'blue' },
-    { permit_no: "RDI", coordinates: { lat: 24.450858,  lng:54.407187 }, link: "https://www.google.com/maps/search/?api=1&query=24.450858,54.407187", color: 'blue' },
-      
-    { permit_no: "87 حدبه", coordinates: { lat: 24.444477,  lng:54.412274 }, link: "https://www.google.com/maps/search/?api=1&query=24.444477,54.412274", color: 'blue' },
-    
-    { permit_no: "لمشرف ابو ظبي", coordinates: { lat: 24.432749, lng: 54.410512 }, link: "https://www.google.com/maps/search/?api=1&query=24.432749,54.410512", color: 'blue' },
-   
-    
-    // New Links
-
-  
-  {
-    permit_no: "تقاطع الفلاح w11", 
-    coordinates: { lat: 24.462643, lng: 54.349483 }, 
-    link: "https://www.google.com/maps/search/?api=1&query=24.462643,54.349483", 
-    color: 'blue'
-  },
-  {
-    permit_no: "w47  مجلس المشرف", 
-    coordinates: { lat: 24.424954, lng: 54.410216 }, 
-    link: "https://www.google.com/maps/search/?api=1&query=24.424954,54.410216", 
-    color: 'blue'
-  },
-
-    ///
-
-
-    {
-    permit_no: "شرق 33   شارع المرور", 
-    coordinates: { lat: 24.437995, lng: 54.414238 }, 
-    link: "https://maps.app.goo.gl/DRqohNb3u5CbtRPu5", 
-    color: 'blue'
-  },
-  { 
-    permit_no: "شرق 1 وشرق 2  WTC parking", 
-    coordinates: { lat: 24.488121, lng: 54.355948 }, 
-    link: "https://maps.app.goo.gl/B8QT5Hvn2Jwbyw9F9", 
-    color: 'blue'
-  },
-  { 
-    permit_no: "ابو ظبي للاستثمار", 
-    coordinates: { lat: 24.456218, lng: 54.401114 }, 
-    link: "https://maps.app.goo.gl/ySwatMXxCQ5tDntQ7", 
-    color: 'blue'
-  },
-  { 
-    permit_no: "e21", 
-    coordinates: { lat: 24.446332, lng: 54.397906 }, 
-    link: "https://maps.app.goo.gl/Xe5fRdqXaMgQNNZc9", 
-    color: 'blue'
-  },
-  { 
-    permit_no: "e21 b", 
-    coordinates: { lat: 24.443116, lng: 54.398204 }, 
-    link: "https://maps.app.goo.gl/Xe5fRdqXaMgQNNZc9", 
-    color: 'blue'
-  },
-  { 
-    permit_no: "e26", 
-    coordinates: { lat: 24.445497, lng: 54.403005 }, 
-    link: "https://maps.app.goo.gl/Xe5fRdqXaMgQNNZc9", 
-    color: 'blue'
-  },
-  { 
-    permit_no: "e29   a", 
-    coordinates: { lat: 24.444605, lng: 54.405515 }, 
-    link: "https://maps.app.goo.gl/Xe5fRdqXaMgQNNZc9", 
-    color: 'blue'
-  },
-  { 
-    permit_no: "e29  b", 
-    coordinates: { lat: 24.434801, lng: 54.415005 }, 
-    link: "https://maps.app.goo.gl/Xe5fRdqXaMgQNNZc9", 
-    color: 'blue'
-  },
-  { 
-    permit_no: "e34-1", 
-    coordinates: { lat: 24.433252, lng: 54.430632 }, 
-    link: "https://maps.app.goo.gl/Xe5fRdqXaMgQNNZc9", 
-    color: 'blue'
-  },
-  { 
-    permit_no: "e40  a", 
-    coordinates: { lat: 24.437102, lng: 54.435490 }, 
-    link: "https://maps.app.goo.gl/Xe5fRdqXaMgQNNZc9", 
-    color: 'blue'
-  },
-  { 
-    permit_no: "e41  a", 
-    coordinates: { lat: 24.434260, lng: 54.435008 }, 
-    link: "https://maps.app.goo.gl/Xe5fRdqXaMgQNNZc9", 
-    color: 'blue'
-  },
-  { 
-    permit_no: "e41 b", 
-    coordinates: { lat: 24.434313, lng: 54.432601 }, 
-    link: "https://maps.app.goo.gl/Xe5fRdqXaMgQNNZc9", 
-    color: 'blue'
-  },
- 
-    { 
-        permit_no: "نفق زايد 2   E48", 
-        coordinates: { lat: 24.444619, lng: 54.438043 }, 
-        link: "https://maps.app.goo.gl/link2", 
-        color: 'blue' 
-    },
-    
-    { 
-        permit_no: "مقبره البطين   w39", 
-        coordinates: { lat: 24.457552, lng: 54.354582 }, 
-        link: "https://maps.app.goo.gl/4Y7Z5G", 
-        color: 'blue' 
-    },
-    { 
-        permit_no: "البطين ابو ظبي", 
-        coordinates: { lat: 24.442526, lng: 54.367575 }, 
-        link: "https://maps.app.goo.gl/5F8X6H", 
-        color: 'blue' 
-    },
-    { 
-        permit_no: "W30", 
-        coordinates: { lat: 24.445982, lng: 54.351314 }, 
-        link: "https://maps.app.goo.gl/6J9V7K", 
-        color: 'blue' 
-    },
-
-    { 
-        permit_no: "W52-02", 
-        coordinates: { lat: 24.433859, lng: 54.384251 }, 
-        link: "https://maps.app.goo.gl/8N1X9P", 
-        color: 'blue' 
-    },
-    { 
-        permit_no: "W53", 
-        coordinates: { lat: 24.403660, lng: 54.475920 }, 
-        link: "https://maps.app.goo.gl/9Q2Y0R", 
-        color: 'blue' 
-    },
-  
-    { 
-        permit_no: "W01", 
-        coordinates: { lat: 24.486524, lng: 54.350868 }, 
-        link: "https://maps.app.goo.gl/1S4A2T", 
-        color: 'blue' 
-    },
-    { 
-        permit_no: "W18-01", 
-        coordinates: { lat: 24.456749, lng: 54.362119 }, 
-        link: "https://maps.app.goo.gl/2T5B3U", 
-        color: 'blue' 
-    },
-    { 
-        permit_no: "w50-02 مخرج الشيخ سلطان", 
-        coordinates: { lat: 24.433661, lng: 54.377187 }, 
-        link: "https://maps.app.goo.gl/3U6C4V", 
-        color: 'blue' 
-    },
-    { 
-        permit_no: "المحطه المركزيه", 
-        coordinates: { lat: 24.471061, lng: 54.377501 }, 
-        link: "https://maps.app.goo.gl/4V7D5W", 
-        color: 'blue' 
-    },
-    { 
-        permit_no: "فندق هيوليدي", 
-        coordinates: { lat: 24.431540, lng: 54.438121 }, 
-        link: "https://maps.app.goo.gl/5W8E6X", 
-        color: 'blue' 
-    },
-    { 
-        permit_no: "جامعه ربدان", 
-        coordinates: { lat: 24.431805, lng: 54.437287 }, 
-        link: "https://maps.app.goo.gl/6X9F7Y", 
-        color: 'blue' 
-    },
-    { 
-        permit_no: "مدخل القضائيه", 
-        coordinates: { lat: 24.413233, lng: 54.449549 }, 
-        link: "https://maps.app.goo.gl/7Y0G8Z", 
-        color: 'blue' 
-    },
-    { 
-        permit_no: "حديقه الخالديه   w11", 
-        coordinates: { lat: 24.469430, lng: 54.346371 }, 
-        link: "https://maps.app.goo.gl/8Z1H9A", 
-        color: 'blue' 
-    },
-    { 
-        permit_no: "النفق - القرم", 
-        coordinates: { lat: 24.444528, lng: 54.440986 }, 
-        link: "https://maps.app.goo.gl/9A2I0B", 
-        color: 'blue' 
-    },
-    { 
-        permit_no: "النفق - قصر البحر", 
-        coordinates: { lat: 24.442634, lng: 54.447070 }, 
-        link: "https://maps.app.goo.gl/0B3J1C", 
-        color: 'blue' 
-    },
-    { 
-        permit_no: "جسر الجويه", 
-        coordinates: { lat: 24.470603, lng: 54.344196 }, 
-        link: "https://maps.app.goo.gl/1C4K2D", 
-        color: 'blue' 
-    },
-    { 
-        permit_no: "زايد الاول w8", 
-        coordinates: { lat: 24.472343, lng: 54.346633 }, 
-        link: "https://maps.app.goo.gl/2D5L3E", 
-        color: 'blue' 
-    },
-    { 
-        permit_no: "زايد الاول   w11", 
-        coordinates: { lat: 24.472309, lng: 54.346642 }, 
-        link: "https://maps.app.goo.gl/3E6M4F", 
-        color: 'blue' 
-    },
-    { 
-        permit_no: "نادي الفروسيه   w14-01", 
-        coordinates: { lat: 24.442748, lng: 54.374147 }, 
-        link: "https://maps.app.goo.gl/4F7N5G", 
-        color: 'blue' 
-    },
-    { 
-        permit_no: "قبل جسر الجويه w59-2", 
-        coordinates: { lat: 24.425741, lng: 54.449419 }, 
-        link: "https://maps.app.goo.gl/5G8O6H", 
-        color: 'blue' 
-    }
-      ];
+    { permit_no: "Location 1", coordinates: { lat: 24.4465, lng: 54.4145 }, link: "https://www.google.com/maps?q=24.4465,54.4145", color: 'red' },
+    { permit_no: "Location 2", coordinates: { lat: 24.4459, lng: 54.4158 }, link: "https://www.google.com/maps?q=24.4459,54.4158", color: 'red' },
+    { permit_no: "Location 3", coordinates: { lat: 24.4481, lng: 54.4101 }, link: "https://www.google.com/maps?q=24.4481,54.4101", color: 'red' },
+    { permit_no: "Location 4", coordinates: { lat: 24.4481, lng: 54.4101 }, link: "https://www.google.com/maps?q=24.4481,54.4101", color: 'red' },
+    { permit_no: "Location 5", coordinates: { lat: 24.4463, lng: 54.4149 }, link: "https://www.google.com/maps?q=24.4463,54.4149", color: 'red' },
+    { permit_no: "Location 6", coordinates: { lat: 24.4461, lng: 54.4154 }, link: "https://www.google.com/maps?q=24.4461,54.4154", color: 'red' },
+    { permit_no: "Location 7", coordinates: { lat: 24.4466, lng: 54.4149 }, link: "https://www.google.com/maps?q=24.4466,54.4149", color: 'red' },
+    { permit_no: "Location 8", coordinates: { lat: 24.4489, lng: 54.4085 }, link: "https://www.google.com/maps?q=24.4489,54.4085", color: 'red' },
+    { permit_no: "Location 9", coordinates: { lat: 24.4494, lng: 54.4077 }, link: "https://www.google.com/maps?q=24.4494,54.4077", color: 'red' },
+    { permit_no: "Location 10", coordinates: { lat: 24.4513, lng: 54.4061 }, link: "https://www.google.com/maps?q=24.4513,54.4061", color: 'red' },
+    { permit_no: "Location 11", coordinates: { lat: 24.4513, lng: 54.4061 }, link: "https://www.google.com/maps?q=24.4513,54.4061", color: 'red' },
+    { permit_no: "Location 12", coordinates: { lat: 24.4479, lng: 54.4136 }, link: "https://www.google.com/maps?q=24.4479,54.4136", color: 'red' },
+    { permit_no: "Location 13", coordinates: { lat: 24.4513, lng: 54.4061 }, link: "https://www.google.com/maps?q=24.4513,54.4061", color: 'red' },
+    { permit_no: "Location 14", coordinates: { lat: 24.4534, lng: 54.4044 }, link: "https://www.google.com/maps?q=24.4534,54.4044", color: 'red' },
+    { permit_no: "Location 15", coordinates: { lat: 24.4544, lng: 54.4041 }, link: "https://www.google.com/maps?q=24.4544,54.4041", color: 'red' },
+    { permit_no: "Location 16", coordinates: { lat: 24.4506, lng: 54.4066 }, link: "https://www.google.com/maps?q=24.4506,54.4066", color: 'red' },
+    { permit_no: "Location 17", coordinates: { lat: 24.4521, lng: 54.4056 }, link: "https://www.google.com/maps?q=24.4521,54.4056", color: 'red' },
+    { permit_no: "Location 18", coordinates: { lat: 24.4524, lng: 54.4054 }, link: "https://www.google.com/maps?q=24.4524,54.4054", color: 'red' },
+    { permit_no: "Location 19", coordinates: { lat: 24.4555, lng: 54.4034 }, link: "https://www.google.com/maps?q=24.4555,54.4034", color: 'red' },
+    { permit_no: "Location 20", coordinates: { lat: 24.4502, lng: 54.407 }, link: "https://www.google.com/maps?q=24.4502,54.407", color: 'red' },
+    { permit_no: "Location 21", coordinates: { lat: 24.4597, lng: 54.4007 }, link: "https://www.google.com/maps?q=24.4597,54.4007", color: 'red' },
+    { permit_no: "Location 22", coordinates: { lat: 24.4436, lng: 54.4299 }, link: "https://www.google.com/maps?q=24.4436,54.4299", color: 'red' },
+    { permit_no: "Location 23", coordinates: { lat: 24.4501, lng: 54.4072 }, link: "https://www.google.com/maps?q=24.4501,54.4072", color: 'red' },
+    { permit_no: "Location 24", coordinates: { lat: 24.4487, lng: 54.4089 }, link: "https://www.google.com/maps?q=24.4487,54.4089", color: 'red' },
+    { permit_no: "Location 25", coordinates: { lat: 24.4483, lng: 54.4097 }, link: "https://www.google.com/maps?q=24.4483,54.4097", color: 'red' },
+    { permit_no: "Location 26", coordinates: { lat: 24.4469, lng: 54.4097 }, link: "https://www.google.com/maps?q=24.4469,54.4097", color: 'red' },
+    { permit_no: "Location 27", coordinates: { lat: 24.4468, lng: 54.4099 }, link: "https://www.google.com/maps?q=24.4468,54.4099", color: 'red' },
+    { permit_no: "Location 28", coordinates: { lat: 24.4467, lng: 54.4097 }, link: "https://www.google.com/maps?q=24.4467,54.4097", color: 'red' },
+    { permit_no: "Location 29", coordinates: { lat: 24.4467, lng: 54.4097 }, link: "https://www.google.com/maps?q=24.4467,54.4097", color: 'red' }
+];
 
       const markers = locations.map(location => {
         const marker = new google.maps.Marker({
